@@ -4,11 +4,13 @@
     <div class="modal">
       <button class="modal__btn" data-modal-close>
         <span hidden>close</span>        
-      
+        <svg class="modal__icon">
+            <use href="./images/modal_film/close.svg"></use>
+          </svg>
       </button>
-        <img src="./images/card/no_poster.png" alt="poster">
-        <h2>name</h2>
-        <div>
+        <img src="./images/card/no_poster.png" alt="poster" class="modal_img">
+        <h2 class="modal__title">name</h2>
+        <div class="modal__description">
             <div>
                 <ul>
                     <li>Vte / Votes</li>
@@ -30,9 +32,9 @@
             <h3>ABOUT</h3>
             <p>text</p>
         </div>
-        <div>
-            <button>ADD TO WATCHED</button>
-            <button>ADD TO QUEUE</button>
+        <div class="block-btn">
+            <button class="modal__btn-add">ADD TO WATCHED</button>
+            <button class="modal__btn-add">ADD TO QUEUE</button>
         </div>
     </div>
 </div>
