@@ -1,4 +1,4 @@
-. backdrop {
+.backdrop {
 position: fixed;
 z-index: 1000;
 overflow-y: scroll;
@@ -16,7 +16,7 @@ cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 &.is-hidden .moddal{
 transform: translate(-50%, -50%) scale(0.8);
 }
-&. is-hidden {
+&.is-hidden {
 opacity: 0;
 pointer-events: none;
 }
