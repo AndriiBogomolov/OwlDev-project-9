@@ -8,3 +8,4 @@ import './js/input.js';
 import './js/footer-modal.js';
 import './js/change-theme.js';
 import './js/library.js';
+import './js/modal_film';

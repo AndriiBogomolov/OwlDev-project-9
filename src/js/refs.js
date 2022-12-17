@@ -1,6 +1,8 @@
 export const refs = {
 	film: document.querySelector("#id"),
-	modalOpen: document.querySelector("[data-modal-open]"),
+	modalOpen: document.querySelector("[data-film-open]"),
+	modalClose: document.querySelector("[data-film-close]"),
+	modal: document.querySelector("[data-film]"),
 	modalFilmImg: document.querySelector(".modal__img"),
 	modalFilmTitle: document.querySelector(".modal__title"),
 	modalFilmVote: document.querySelector(".vote"),
