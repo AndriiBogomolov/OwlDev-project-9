@@ -1,0 +1,35 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+p,
+button {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
