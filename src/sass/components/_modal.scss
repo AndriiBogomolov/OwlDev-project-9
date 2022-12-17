@@ -12,7 +12,7 @@ background-color: rgba(0, 0, 0, 0.2);
 
 
 opacity: 1;
-transibition: olacity 250ms 
+transition: olacity 250ms 
 cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 &.is-hidden .moddal{
 transform: translate(-50%, -50%) scale(0.8);
@@ -39,7 +39,7 @@ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .modal__img {
 margin-top: 48px;
 width: 240px;
-hight: 357px;
+height: 357px;
 }
 .modal__title {
 margin-top: 20px;
