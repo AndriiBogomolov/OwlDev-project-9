@@ -2,6 +2,7 @@
 
 @import './base/common';
 @import './base/container';
+@import './base/section';
 
 @import './components/main';
 @import './components/change-theme';
@@ -19,3 +20,4 @@
 @import './utils/variables';
 @import './utils/visualy-hidden';
 
+@import './components/spiner';
