@@ -55,6 +55,8 @@
 const API_KEY = 'e52c7d8699df589ec79fa44e6b7f6a0c';
 const BASE_URL = 'https://api.themoviedb.org/';
 
+export { API_KEY, BASE_URL };
+
 export default class ApiServise {
     constructor() {
         this.page = 1;
