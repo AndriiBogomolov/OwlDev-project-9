@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+:root {
+    --button-and-text-orange: #ff6b01;
+    --header-line-and-numbers: #ff6b08;
+    --header-focus: rgba(255, 143, 68, 0.863);
+    --white: #ffffff;
+    --black: #000000;
+    --backdrop-color: rgba(0, 0, 0, 0.6);
+    --error-text: #ff001b;
+    --text-in-modal: #8c8c8c;
+    --pagination-and-footer-background: #f7f7f7;
+    --footer-color-text: #545454;
+
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-duration: 250ms;
+}

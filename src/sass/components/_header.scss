@@ -1,0 +1,219 @@
+.header {
+    padding-top: 40px;
+    padding-bottom: 44px;
+
+    background-repeat: no-repeat;
+
+    background-image: url(../images/header/abstract-background-mobile@1x.png);
+    background-position: center;
+    background-size: 100% 100%;
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 2dppx) {
+        background-image: url(../images/header/abstract-background-mobile@2x.png);
+    }
+
+    @media screen and (min-width: 768px) {
+        padding-top: 45px;
+        background-image: url(../images/header/abstract-background-tablet@1x.png);
+        background-position: center;
+        background-size: 100% 100%;
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 2dppx) {
+            background-image: url(../images/header/abstract-background-tablet@2x.png);
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+
+        background-image: url(../images/header/abstract-background-desktop@1x.png);
+        background-position: center;
+        background-size: 100% 100%;
+
+        @media (min-device-pixel-ratio: 2),
+        (min-resolution: 2dppx) {
+            background-image: url(../images/header/abstract-background-desktop@2x.png);
+        }
+    }
+}
+
+.container-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    text-decoration: none;
+
+    @media (min-width:1280px) {
+        gap: 12px;
+    }
+
+    &__name {
+        @media (max-width:767px) {
+            display: none;
+        }
+
+        font-family: inherit;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.17;
+        align-items: center;
+        text-align: center;
+        color: var(--white);
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: flex-end;
+    margin: auto;
+    padding: 0;
+
+    &__item {
+        text-align: center;
+        align-items: baseline;
+
+    }
+
+}
+
+.menu-nav__link {
+    position: relative;
+    display: block;
+
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+
+    align-items: baseline;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+
+    &--current::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        content: "";
+        width: 100%;
+        height: 4px;
+        bottom: -1px;
+        background-color: var(--error-text);
+        transform: translateY(100%);
+    }
+
+}
+
+.search-form {
+
+    width: 280px;
+    padding-top: 54px;
+
+    margin: auto;
+
+    @media screen and (min-width: 768px) {
+        width: 336px;
+        padding-top: 40px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 394px;
+    }
+
+    &__input {
+        width: 100%;
+        min-height: 20px;
+
+        background-color: transparent;
+        border: none;
+        border-bottom: 0.5px solid var(--white);
+        margin: 0;
+        outline: none;
+
+        font-family: inherit;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.14;
+        display: flex;
+        align-items: center;
+        color: var(--white);
+
+        transition: border 250ms var(--timing-function);
+    }
+
+    &__button {
+        position: relative;
+
+        width: 20px;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        border-bottom: 0.5px solid var(--white);
+        padding: 10px;
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        right: 1px;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+
+    }
+
+}
+
+::placeholder {
+    color: var(--white);
+    opacity: 1;
+}
+
+.error-text {
+    padding-top: 16px;
+
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    align-items: center;
+    display: flex;
+    color: var(--error-text);
+
+    margin: auto;
+
+    @media screen and (min-width: 768px) {
+        width: 393px;
+        padding-top: 20px;
+    }
+
+}

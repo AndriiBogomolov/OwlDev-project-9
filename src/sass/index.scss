@@ -1,2 +1,22 @@
-@import './common';
-@import './example';
+@import '/node_modules/basiclightbox/dist/basicLightbox.min.css';
+
+@import './base/common';
+@import './base/container';
+@import './base/section';
+
+@import './components/main';
+@import './components/change-theme';
+@import './components/preloader';
+@import './components/header';
+@import './components/library-style';
+@import './components/footer';
+@import './components/backdrop';
+@import './components/modal';
+@import './components/footer-modal';
+@import './components/library';
+@import './components/pagination';
+@import './components/youTube-modal';
+
+@import './utils/variables';
+@import './utils/visualy-hidden';
+
