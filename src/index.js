@@ -14,5 +14,4 @@ import './js/api-service.js';
 import './js/footer-modal-team.js';
 import './js/modal_film.js';
 import './js/refs.js';
-import './js/spiner.js'
-
+import './js/spiner.js';
