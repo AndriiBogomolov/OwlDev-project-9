@@ -46,7 +46,7 @@ function renderList(films) {
    
     let genres = getGenre(genre_ids);
     return (cardList.innerHTML += `<li class="card__item item">
-                  <a class="card__link link" href="#" data-modal-open>
+                  <a class="card__link link" href="#" data-id="${id}">
                     <div class="card__thumb">
                       <img class="card__img"
                         sizes="(min-width: 1280px) 370px, (min-width: 768px) 354px, (max-width: 767px) 450px, 100vw"
