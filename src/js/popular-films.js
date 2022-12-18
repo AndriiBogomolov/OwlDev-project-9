@@ -2,32 +2,32 @@ const cardList = document.querySelector('.card');
 const URL =
   'https://api.themoviedb.org/3/trending/movie/day?api_key=177f83f5259c7f846e561f4715bd03a4';
 
-const URLgenre =
-  'https://api.themoviedb.org/3/genre/movie/list?api_key=177f83f5259c7f846e561f4715bd03a4&language=en-US';
+const URLgenre = 'https://api.themoviedb.org/3/genre/movie/list?api_key=177f83f5259c7f846e561f4715bd03a4&language=en-US';
 
 function fetchGenres() {
-  return fetch(URLgenre).then(responce => {
+   return fetch(URLgenre).then(responce => {
     if (!responce.ok) {
       throw new Error(responce.statusText);
     }
-    return responce.json();
-  });
+   return responce.json();
+   })
 }
 
-function getGenre(genre_ids) {
+function getGenre(genre_ids) { 
   let genreName = [];
-  genre_ids.forEach(genre_id => {
+  genre_ids.forEach(genre_id => { 
     genreName.push(genreIdArr.find(genre => genre.id === genre_id).name);
-  });
-  return genreName;
+  })
+   return genreName;
 }
 
-fetchGenres()
-  .then(genreId => {
-    genreIdArr = genreId.genres;
-    //console.log(genreIdArr)
+fetchGenres().then(genreId => {
+  genreIdArr = genreId.genres;
+  //console.log(genreIdArr)
   })
   .catch(error => console.log(error));
+
+
 
 function fetchPopular() {
   return fetch(URL).then(responce => {
@@ -42,25 +42,25 @@ function renderList(films) {
   films.results.map(film => {
     let year = new Date(film.release_date);
     let yearRelease = year.getFullYear();
-    genre_ids = film.genre_ids;
-
+    genre_ids=film.genre_ids
+   
     let genres = getGenre(genre_ids);
     return (cardList.innerHTML += `<li class="card__item item">
                   <a class="card__link link" href="#" data-modal-open>
-                  <div class="card__thumb">
-                  <img class="card__img"
-                    sizes="(min-width: 1280px) 370px, (min-width: 768px) 354px, (max-width: 767px) 450px, 100vw"
-                    src='https://www.themoviedb.org/t/p/w500/${film.poster_path}'
-                    alt="tehnocryak"
-                    width="100%"
-                  />
-                </div>
-                <div class="card__meta">
-                  <h2 class="card__title">${film.original_title}</h2>
-                  <p class="card__info">${genres} | ${yearRelease}</p>
-                </div>
-              </a>
-            </li>`);
+                    <div class="card__thumb">
+                      <img                       
+                        sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (max-width: 767px) 450px, 100vw"
+                        src='https://www.themoviedb.org/t/p/w500/${film.poster_path}'
+                        alt="tehnocryak"
+                        width="100%"
+                      />
+                    </div>
+                    <div class="card__meta">
+                      <h2 class="card__heading">${film.original_title}</h2>
+                      <p class="card__lead">${genres} | ${yearRelease}</p>
+                    </div>
+                  </a>
+                </li>`);
   });
 }
 
@@ -71,3 +71,8 @@ function markupPopular() {
 }
 
 markupPopular();
+
+
+
+
+
