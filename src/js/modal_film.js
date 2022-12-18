@@ -46,4 +46,3 @@ import { API_KEY } from './api-service';
     refs.modalFilmDescription.textContent = obj.overview;
     refs.modalFilmGenre.textContent = genres;
   }
-  
