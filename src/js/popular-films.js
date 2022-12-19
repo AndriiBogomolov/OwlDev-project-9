@@ -23,6 +23,7 @@ function getGenre(genre_ids) {
 
 fetchGenres().then(genreId => {
   genreIdArr = genreId.genres;
+  return genreIdArr;
   //console.log(genreIdArr)
   })
   .catch(error => console.log(error));
