@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
     <link rel="stylesheet" href="./sass/index.scss" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" src="./index.js"></script>
   </head>
   <body>
@@ -13,34 +18,36 @@
       <div class="container">
         <div class="nav__wrapper">
           <div class="logo__wrapper">
-            <a href="../index.html" class="logo__link">
+            <a href="./index.html" class="logo__link">
               <svg class="logo__icon">
-                <use xmlns href="./images/icon/icon.svg#icon-film"></use>
+                <!-- <use xmlns href="./images/icon/icon.svg#icon-film"></use> -->
               </svg>
             </a>
-            <span class="logo__text">
-              Filmoteka
-            </span>
+            <span class="logo__text"> Filmoteka </span>
           </div>
 
           <ul class="nav__list">
-            <li class="nav__item"><a href="./index.html" class="nav__link link">Home</a></li>
-            <li class="nav__item"><a href="./library.html" class="nav__link nav__link--current  link">my library</a></li>
+            <li class="nav__item">
+              <a href="./index.html" class="nav__link link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="./library.html" class="nav__link nav__link--current link"
+                >my library</a
+              >
+            </li>
           </ul>
         </div>
         <div class="btn-thumb">
-           <ul class="btn__list">
-                <li class="btn__item">
-                    <button class="btn-watch btn">Watch</button>
-                </li>
-                <li class="btn__item">
-                    <button class="btn-queue btn">Queue</button>
-                </li>
-           </ul>
-          
+          <ul class="btn__list">
+            <li class="btn__item">
+              <button class="btn-watch btn">Watch</button>
+            </li>
+            <li class="btn__item">
+              <button class="btn-queue btn">Queue</button>
+            </li>
+          </ul>
         </div>
       </div>
     </header>
-
   </body>
 </html>
