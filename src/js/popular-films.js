@@ -49,7 +49,6 @@ function renderList(films) {
     return (cardList.innerHTML += `<li class="card__item item">
 
                   <a class="card__link link" href="#" id="${film.id}" data-id="${film.id}" data-film-open>
-
                     <div class="card__thumb">
                       <img class="card__img"                      
                         sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (max-width: 767px) 450px, 100vw"
