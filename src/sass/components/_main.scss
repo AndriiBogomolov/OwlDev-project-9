@@ -12,17 +12,14 @@
     
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width:1280px) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 32px;
     grid-column-gap: 16px;
     
 }
    
-}
-//.card__item {
-
-    
+}    
 
 .card__item {
 
@@ -79,5 +76,3 @@
     color: var(--header-line-and-numbers);
 
 }
-
-//}
