@@ -1,7 +1,6 @@
-.header{
+.header-library{
     padding: 40px 0 60px;
-    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library/backfon-library@1x.jpg');
-    max-width: 768px;
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library-head-img/backfon-library@1x.jpg');
     margin-left: auto;
     margin-right: auto;
     background-position: center;
@@ -10,23 +9,23 @@
     @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
-         background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library/backfon-library@2x.png');
+         background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library-head-img/backfon-library@2x.png');
     }
    @media(min-width: 768px){
-        background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library/bg-library-tablet@1x.png');
+        background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library-head-img/bg-library-tablet@1x.png');
         @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
-        background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library/bg-library-tablet@2x.png');
+        background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library-head-img/bg-library-tablet@2x.png');
 
         }
     }
     @media(min-width: 1280px){
-        background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library/bg-desktop-library-hd@1x.png');
+        background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library-head-img/bg-desktop-library-hd@1x.png');
         @media (min-device-pixel-ratio: 2),
         (min-resolution: 192dpi),
         (min-resolution: 2dppx) {
-        background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library/bg-desktop-library-hd@2x.png');
+        background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.56),rgba(0,0,0,0)), url('../images/library-head-img/bg-desktop-library-hd@2x.png');
 
         }
     }
