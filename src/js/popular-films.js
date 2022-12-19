@@ -45,10 +45,12 @@ function renderList(films) {
     genre_ids=film.genre_ids
    
     let genres = getGenre(genre_ids);
+   
     return (cardList.innerHTML += `<li class="card__item item">
-                  <a class="card__link link" href="#" data-modal-open>
+
+                  <a class="card__link link" href="#" id="${film.id}" data-id="${film.id}" data-film-open>
                     <div class="card__thumb">
-                      <img                       
+                      <img class="card__img"                      
                         sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (max-width: 767px) 450px, 100vw"
                         src='https://www.themoviedb.org/t/p/w500/${film.poster_path}'
                         alt="tehnocryak"
@@ -56,8 +58,8 @@ function renderList(films) {
                       />
                     </div>
                     <div class="card__meta">
-                      <h2 class="card__heading">${film.original_title}</h2>
-                      <p class="card__lead">${genres} | ${yearRelease}</p>
+                      <h2 class="card__title">${film.original_title}</h2>
+                      <p class="card__info">${genres} | ${yearRelease}</p>
                     </div>
                   </a>
                 </li>`);
@@ -70,8 +72,8 @@ function markupPopular() {
     .catch(error => console.log(error));
 }
 
-markupPopular();
 
+markupPopular();
 
 
 
