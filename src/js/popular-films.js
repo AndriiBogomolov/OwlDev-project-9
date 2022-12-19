@@ -47,6 +47,7 @@ function renderList(films) {
     let genres = getGenre(genre_ids);
    
     return (cardList.innerHTML += `<li class="card__item item">
+
                   <a class="card__link link" href="#" id="${film.id}" data-id="${film.id}" data-film-open>
                     <div class="card__thumb">
                       <img class="card__img"                      
