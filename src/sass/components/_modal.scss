@@ -1,5 +1,5 @@
 // modal
-.backdrop-film {
+.backdrop {
     position: fixed;
     z-index: 1000;
     overflow-y: scroll;
@@ -71,7 +71,7 @@
   
     border: none;
     cursor: pointer;
-    transition: background-color 250ms --timing-function;
+    // transition: background-color 250ms --timing-function;
   
     &:hover,
     &:focus {
