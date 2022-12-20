@@ -1,12 +1,14 @@
 const cardList = document.querySelector('.card');
-const URL = 'https://api.themoviedb.org/3/trending/movie/day?api_key=177f83f5259c7f846e561f4715bd03a4';
+const URL =
+  'https://api.themoviedb.org/3/trending/movie/day?api_key=177f83f5259c7f846e561f4715bd03a4';
 
-const URLgenre = 'https://api.themoviedb.org/3/genre/movie/list?api_key=177f83f5259c7f846e561f4715bd03a4&language=en-US';
+const URLgenre =
+  'https://api.themoviedb.org/3/genre/movie/list?api_key=177f83f5259c7f846e561f4715bd03a4&language=en-US';
 
 let genreIdArr;
 
 function fetchGenres() {
-  return fetch(URLgenre).then((responce) => {
+  return fetch(URLgenre).then(responce => {
     if (!responce.ok) {
       throw new Error(responce.statusText);
     }
@@ -16,22 +18,22 @@ function fetchGenres() {
 
 function getGenre(genre_ids) {
   let genreName = [];
-  genre_ids.forEach((genre_id) => {
-    genreName.push(genreIdArr.find((genre) => genre.id === genre_id).name);
+  genre_ids.forEach(genre_id => {
+    genreName.push(genreIdArr.find(genre => genre.id === genre_id).name);
   });
   return genreName;
 }
 
 fetchGenres()
-  .then((genreId) => {
+  .then(genreId => {
     genreIdArr = genreId.genres;
     return genreIdArr;
     //console.log(genreIdArr)
   })
-  .catch((error) => console.log(error));
+  .catch(error => console.log(error));
 
 function fetchPopular() {
-  return fetch(URL).then((responce) => {
+  return fetch(URL).then(responce => {
     if (!responce.ok) {
       throw new Error(responce.statusText);
     }
@@ -39,8 +41,8 @@ function fetchPopular() {
   });
 }
 
-function renderList(films) {
-  films.results.map((film) => {
+export default function renderList(films) {
+  films.results.map(film => {
     let year = new Date(film.release_date);
     let yearRelease = year.getFullYear();
     let genre_ids = film.genre_ids;
@@ -68,10 +70,10 @@ function renderList(films) {
   });
 }
 
-function markupPopular() {
-  fetchPopular()
-    .then((films) => renderList(films))
-    .catch((error) => console.log(error));
-}
+// function markupPopular() {
+//   fetchPopular()
+//     .then((films) => renderList(films))
+//     .catch((error) => console.log(error));
+// }
 
-markupPopular();
+// markupPopular();
