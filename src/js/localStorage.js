@@ -1,67 +1,35 @@
 import Notiflix from 'notiflix';
-import './modal_film'
+import {onModalWindowOpen} from './modal_film'
+import { refs } from './refs';
 
-const LOCAL_STORGE_WATCHED = 'local-storage-watched';
-const LOCAL_STORGE_QUEUE = 'local-storage-queue';
 
-document.addEventListener('click', handleClickMainPage);
+const modal = document.querySelector('.modal-film');
+const modalFilmWatched = document.querySelector(".button-watched");
+const modalFilmQueue = document.querySelector(".button-queue");
 
-function handleClickMainPage(e){
-    if(!e.target.dataset.add && (e.target.dataset.add !== 'watched' || e.target.dataset.add !== 'queue')){
-        return;
-    }
-    saveToLocalStorage(e.target.dataset.add, e, handleData);
-}
+modal.addEventListener('click', onModalButtons);
 
-function saveToLocalStorage(type, e, handle) {
-    const modal = document.querySelector('.modal-film');
-    const film = {
-      id: parseInt(modal.querySelector('[data-id]').dataset.id),
-      src: modal.querySelector('img').src,
-      alt: modal.querySelector('img').alt,
-      vote: modal.querySelector('[data-vote]').dataset.vote,
-      date: modal.querySelector('[data-date]').dataset.date.slice(0, 4),
-      genre: modal.querySelector('[data-genre]').textContent,
-    };
+
+function onModalButtons (e){
+  const film = JSON.parse(e.target.dataset.info)
   
-    const local = {
-      watched: {
-        key: LOCAL_STORGE_WATCHED,
-        data: getData(LOCAL_STORGE_WATCHED),
-      },
-      queue: {
-        key: LOCAL_STORGE_QUEUE,
-        data: getData(LOCAL_STORGE_QUEUE),
-      },
-    };
-  
-      handle({local, type, film, e});
+  let saveWatch = localStorage.getItem('watch')
+  console.log(saveWatch)
+  if (saveWatch) {
+    saveWatch = JSON.parse(saveWatch)
+  } else {
+    saveWatch = [];
+  } 
+    const isexist = saveWatch.find(el =>
+    el.id === film.id)
+    
+  if (isexist) {
+    saveWatch = saveWatch.filter(el =>
+      el.id !== film.id)
+      refs.modalFilmWatched.textContent = "add to watch"
+  } else {
+    saveWatch.push(film)
+    refs.modalFilmWatched.textContent = "remove from watch"
   }
-
-  function handleData({local, type, film, e}){    
-    const key = local[type].key;
-    const data = local[type].data;
-    let currentData = data;
-    const other = type === 'watched' ? 'queue' : 'watched'
-    if(data.find(d => d.id === film.id)){
-        currentData = data.filter(d => d.id !== film.id);
-        save(key, currentData);
-        e.target.textContent = `add to ${type}`;
-        Notiflix.Notify.warning(`This film removed from your ${type} library`);
-    } else if(local[other].data.find(d => d.id === film.id)){
-        Notiflix.Notify.warning(`This film already in ${other} library`);
-    } else {
-        currentData = [...data, film];
-        save(key, currentData);
-        e.target.textContent = `remove from ${type}`;
-        Notiflix.Notify.success(`This film added to your ${type} library`);
-    }
-    return currentData;
+  localStorage.setItem('watch', JSON.stringify(saveWatch))
 }
-
-function save(key, data){
-    data.length ? localStorage.setItem(key, JSON.stringify(data))
-                : localStorage.removeItem(key);
-}
-
-
