@@ -16,8 +16,8 @@
           class="modal__img"
         />
     </a>
-    <div class="modal-film__info">
-    <h2 class="modal-film__title">name</h2>
+    <div class="modal-film__info" data-id="${id}">
+    <h2 class="modal-film__title" >name</h2>
     <div class="modal-film__description">
       <div>
         <ul class="modal-film__list-key list">
@@ -43,9 +43,9 @@
       <h3 class="about__title">ABOUT</h3>
       <p class="about__text">text</p>
     </div>
-    <div class="block-btn">
-      <button class="block-btn__add button-watched" data-${dataset}="watched" >${checkInLocalStorage(KEYS.LOCAL_STORGE_WATCHED, id)} WATCHED</button>
-      <button class="block-btn__add button-queue" data-${dataset}="queue" >${checkInLocalStorage(KEYS.LOCAL_STORGE_QUEUE, id)} QUEUE</button>
+    <div class="block-btn modal-wrapper" data-name="modal-wrapper">
+      <button class="block-btn__add button-watched" data-action="watched">ADD TO WATCH</button>
+      <button class="block-btn__add button-queue" data-action="queue">ADD TO QUEUE</button>
     </div>
   </div>
 </div>

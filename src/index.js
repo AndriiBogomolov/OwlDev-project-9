@@ -14,3 +14,4 @@ import './js/fetchMovieDetails';
 import './js/spiner';
 import './js/change-theme';
 import './js/refs';
+import './js/pagination.js';
