@@ -4,8 +4,8 @@ export default class ApiServise {
         this.page = 1;
         this.searchQuery = '';
     }
-    fetchMoviesByRequest() {
-        const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`;
+    async fetchMoviesByRequest() {
+        const url = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`);
         return fetch(url)
             .then(response => response.json())
         // console.log(fetchMoviesByRequest())
