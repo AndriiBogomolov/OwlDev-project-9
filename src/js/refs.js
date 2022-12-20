@@ -7,4 +7,6 @@ export const refs = {
 	modalFilmOrigTitle: document.querySelector(".orig-title"),
 	modalFilmGenre: document.querySelector(".genre"),
 	modalFilmDescription: document.querySelector(".about__text"),
+	modalFilmWatched: document.querySelector(".button-watched"),
+    modalFilmQueue: document.querySelector(".button-queue"),
 };
