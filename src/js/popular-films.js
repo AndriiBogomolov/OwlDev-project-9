@@ -56,6 +56,7 @@ function renderList(films) {
                         src='https://www.themoviedb.org/t/p/w500/${film.poster_path}'
                         alt="tehnocryak"
                         width="100%"
+                        class="card__img"
                       />
                     </div>
                     <div class="card__meta">
