@@ -8,13 +8,13 @@ export default class ApiServise {
         const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`;
         return fetch(url)
             .then(response => response.json())
-        console.log(fetchMoviesByRequest())
+        // console.log(fetchMoviesByRequest())
 
-            .then(({ results }) => {
-                this.incrementPage();
+        //     .then(({ results }) => {
+        //         this.incrementPage();
 
-                return results;
-            });
+        //         return results;
+        //     });
 
     }
     incrementPage() {
