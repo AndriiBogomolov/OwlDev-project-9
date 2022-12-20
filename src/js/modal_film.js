@@ -2,14 +2,9 @@ import { refs } from './refs';
 import { API_KEY, BASE_URL } from './api-service';
 import { Notify } from 'notiflix';
 
-
-
-
 const movieList = document.querySelector('.card');
 const backdrop = document.querySelector('.backdrop');
 const closeButton = document.querySelector('.close-button');
-
-
 
 movieList.addEventListener('click', onModalWindowOpen);
 closeButton.addEventListener('click', onModalWindowClose);
@@ -21,14 +16,8 @@ function onModalWindowOpen(e) {
   } else if (e.target.closest('li')) {
     
     const filmId = e.target.closest('a').getAttribute('id');    
-    requestFullInfo(filmId).then(data => {
-      console.log(data)
-      let dataa = data
-
-      fillingMurkup(data)});
+    requestFullInfo(filmId).then(data => fillingMurkup(data));
   
-
-
     document.body.style.overflow = 'hidden';
     backdrop.classList.remove('is-hidden');
     document.addEventListener('keydown', onEscClose);

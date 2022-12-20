@@ -12,6 +12,7 @@ modal.addEventListener('click', onModalButtons);
 
 function onModalButtons (e){
   const film = JSON.parse(e.target.dataset.info)
+  console.log(e.target.dataset.info)
   
   let saveWatch = localStorage.getItem('watch')
   console.log(saveWatch)
@@ -26,10 +27,33 @@ function onModalButtons (e){
   if (isexist) {
     saveWatch = saveWatch.filter(el =>
       el.id !== film.id)
-      refs.modalFilmWatched.textContent = "add to watch"
+      refs.modalFilmWatched.textContent = "ADD TO WATCH"
   } else {
     saveWatch.push(film)
-    refs.modalFilmWatched.textContent = "remove from watch"
+    refs.modalFilmWatched.textContent = "REMOVE FROM WATCH"
   }
   localStorage.setItem('watch', JSON.stringify(saveWatch))
+
+
+  let saveQueue = localStorage.getItem('queue')
+console.log(saveQueue)
+
+if (saveQueue) {
+  saveQueue = JSON.parse(saveQueue)
+} else {
+  saveQueue = [];
+} 
+  const isexistQ = saveQueue.find(el =>
+  el.id === film.id)
+  
+if (isexistQ) {
+  saveQueue = saveQueue.filter(el =>
+    el.id !== film.id)
+    refs.modalFilmQueue.textContent = "ADD TO QUEUE"
+} else {
+  saveQueue.push(film)
+  refs.modalFilmQueue.textContent = "REMOVE FROM QUEUE"
+}
+localStorage.setItem('queue', JSON.stringify(saveQueue))
+
 }
