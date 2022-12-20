@@ -1,14 +1,15 @@
 import { API_KEY, BASE_URL } from './api-service';
 export default class ApiServise {
-    constructor() {
-        this.page = 1;
-        this.searchQuery = '';
-    }
-    async fetchMoviesByRequest() {
-        const url = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`);
-        return fetch(url)
-            .then(response => response.json())
-        // console.log(fetchMoviesByRequest())
+  constructor() {
+    this.page = 1;
+    this.searchQuery = '';
+  }
+  fetchMoviesByRequest() {
+    const url = fetch(
+      `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`
+    );
+    return fetch(url).then(response => response.json());
+    // console.log(fetchMoviesByRequest())
 
     //     .then(({ results }) => {
     //         this.incrementPage();

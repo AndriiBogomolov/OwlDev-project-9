@@ -1,17 +1,15 @@
-import { } from "./fetchMovieSearch";
-const apiServise = new ApiServise()
+import {} from './fetchMovieSearch';
+const apiServise = new ApiServise();
 
 const API_KEY = 'e52c7d8699df589ec79fa44e6b7f6a0c';
 const BASE_URL = 'https://api.themoviedb.org/';
 
-
-
 const refs = {
-    searchForm: document.querySelector('.search-form'),
-    btn: document.querySelector('.search-form__button'),
-    cardList: document.querySelector('.card list'),
-    gallery: document.querySelector('.container')
-}
+  searchForm: document.querySelector('.search-form'),
+  btn: document.querySelector('.search-form__button'),
+  cardList: document.querySelector('.card list'),
+  gallery: document.querySelector('.container'),
+};
 
 refs.searchForm.addEventListener('submit', onSearchForm);
 
