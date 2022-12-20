@@ -9,3 +9,4 @@ export async function fetchMovieDetails(movieId) {
   }
   return await response.json();
 }
+

@@ -1,6 +1,4 @@
 // import './sass/index.scss';
-
-// import './sass/main.scss';
 import './js/header.js';
 import './js/modalCard';
 import './js/localStorage';
@@ -11,3 +9,9 @@ import './js/library.js';
 import './js/popular-films.js';
 import './js/modal_film.js';
 import './js/popular-films.js';
+import './js/spiner.js';
+import './js/fetchMovieDetails';
+import './js/spiner';
+import './js/change-theme';
+import './js/refs';
+import './js/pagination.js';
