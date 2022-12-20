@@ -44,8 +44,8 @@
       <p class="about__text">text</p>
     </div>
     <div class="block-btn">
-      <button class="block-btn__add">ADD TO WATCHED</button>
-      <button class="block-btn__add">ADD TO QUEUE</button>
+      <button class="block-btn__add button-watched" data-${dataset}="watched" >${checkInLocalStorage(KEYS.LOCAL_STORGE_WATCHED, id)} WATCHED</button>
+      <button class="block-btn__add button-queue" data-${dataset}="queue" >${checkInLocalStorage(KEYS.LOCAL_STORGE_QUEUE, id)} QUEUE</button>
     </div>
   </div>
 </div>
