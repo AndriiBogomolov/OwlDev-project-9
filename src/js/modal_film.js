@@ -9,7 +9,7 @@ const closeButton = document.querySelector('.close-button');
 movieList.addEventListener('click', onModalWindowOpen);
 closeButton.addEventListener('click', onModalWindowClose);
 backdrop.addEventListener('click', onBackdropClick);
-console.log(movieList)
+
 function onModalWindowOpen(e) {
   if (!e.target.closest('li')) {   
     return;
@@ -46,10 +46,10 @@ function requestFullInfo(filmId) {
 
 function fillingMurkup(obj) {
   const genres = obj.genres.map(genre => genre.name).join(', ');
-  let saveWatch = localStorage.getItem('watch')
-  saveWatch = saveWatch ? JSON.parse(saveWatch) : []
+  let saveWatch = localStorage.getItem('watch');
+  saveWatch = saveWatch ? JSON.parse(saveWatch) : [];
   const isexist = saveWatch.find(el =>
-    el.id === obj.id)
+    el.id === obj.id);
   refs.modalFilmImg.src = `https://image.tmdb.org/t/p/w500/${obj.poster_path}`;
   refs.modalFilmImg.alt = `${obj.title} poster`;
   refs.modalFilmTitle.textContent = obj.title;
@@ -62,8 +62,8 @@ function fillingMurkup(obj) {
   refs.modalFilmGenre.textContent = genres;
   refs.modalFilmWatched.dataset.info = JSON.stringify(obj);
   refs.modalFilmQueue.dataset.info = JSON.stringify(obj);
-  refs.modalFilmWatched.textContent = isexist ? "removed from watched" : "add to watched"
-  refs.modalFilmQueue.textContent = isexist ? "removed from queue" : "add to queue"
+  refs.modalFilmWatched.textContent = isexist ? "removed from watched" : "add to watched";
+  refs.modalFilmQueue.textContent = isexist ? "removed from queue" : "add to queue";
 }
 
 
