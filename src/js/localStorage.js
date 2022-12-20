@@ -34,26 +34,4 @@ function onModalButtons (e){
   }
   localStorage.setItem('watch', JSON.stringify(saveWatch))
 
-
-  let saveQueue = localStorage.getItem('queue')
-console.log(saveQueue)
-
-if (saveQueue) {
-  saveQueue = JSON.parse(saveQueue)
-} else {
-  saveQueue = [];
-} 
-  const isexistQ = saveQueue.find(el =>
-  el.id === film.id)
-  
-if (isexistQ) {
-  saveQueue = saveQueue.filter(el =>
-    el.id !== film.id)
-    refs.modalFilmQueue.textContent = "ADD TO QUEUE"
-} else {
-  saveQueue.push(film)
-  refs.modalFilmQueue.textContent = "REMOVE FROM QUEUE"
-}
-localStorage.setItem('queue', JSON.stringify(saveQueue))
-
 }
