@@ -20,6 +20,7 @@ function onModalWindowOpen(e) {
     const filmId = e.target.closest('a').getAttribute('id');    
     requestFullInfo(filmId).then(data => fillingMurkup(data));
 
+
     document.body.style.overflow = 'hidden';
     backdrop.classList.remove('is-hidden');
     document.addEventListener('keydown', onEscClose);
@@ -43,6 +44,7 @@ function requestFullInfo(filmId) {
       Notify.failure('Sorry, something goes wrong. Please, try again')
     );
 }
+
 
 function fillingMurkup(obj) {
   const genres = obj.genres.map(genre => genre.name).join(', ');
