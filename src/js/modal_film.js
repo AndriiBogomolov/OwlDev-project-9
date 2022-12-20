@@ -62,8 +62,8 @@ function fillingMurkup(obj) {
   refs.modalFilmGenre.textContent = genres;
   refs.modalFilmWatched.dataset.info = JSON.stringify(obj);
   refs.modalFilmQueue.dataset.info = JSON.stringify(obj);
-  refs.modalFilmWatched.textContent = isexist ? "removed from watched" : "add to watched"
-  refs.modalFilmQueue.textContent = isexist ? "removed from queue" : "add to queue"
+  refs.modalFilmWatched.textContent = isexist ? "REMOVED FORM WATCHED" : "ADD TO WATCHED"
+  refs.modalFilmQueue.textContent = isexist ? "REMOVED FORM QUEUE" : "ADD TO QUEUE"
 }
 
 
