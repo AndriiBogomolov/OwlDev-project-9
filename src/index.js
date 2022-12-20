@@ -11,3 +11,4 @@ import './js/library.js';
 import './js/popular-films.js';
 import './js/modal_film.js';
 import './js/popular-films.js';
+import './js/spiner.js'
