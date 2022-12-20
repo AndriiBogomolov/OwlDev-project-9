@@ -65,28 +65,3 @@ function save(key, data){
 }
 
 
-function markupCard(LocalStgData) {
-    const markup = LocalStgData.map(({ alt, date, genre, id, src, vote }) => {
-      
-      const rating = Number(vote);
-      return `
-                  <li class="gallery__item card-set" data-id="${id}">
-          <div class="img-wrap">
-            <img
-              class="gallery__img"
-              src="${src}"
-              alt="${alt}"
-              loading="lazy"
-            />
-          </div>
-          <div class="gallary-wrapper">
-            <h2 class="gallery__title">${alt}</h2>
-            <div class="gallery__wrap">
-              <p class="gallery__ganres">${genre} | ${date}</p>
-              <p class="gallery__rating">${rating}</p>
-            </div>
-          </div>
-        </li>`;
-    }).join('');
-    refs.galleryRef.innerHTML = markup;
-  }
