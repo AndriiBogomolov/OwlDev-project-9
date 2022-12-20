@@ -39,9 +39,8 @@ function fetchPopular() {
   });
 }
 
-export default function renderList(films) {
-  // console.log(films);
-  films.results.map(film => {
+function renderList(films) {
+  films.results.map((film) => {
     let year = new Date(film.release_date);
     let yearRelease = year.getFullYear();
     let genre_ids = film.genre_ids;
@@ -69,12 +68,10 @@ export default function renderList(films) {
   });
 }
 
-// function markupPopular() {
-//   fetchPopular()
-//     .then(films => {
-//       renderList(films);
-//     })
-//     .catch(error => console.log(error));
-// }
+function markupPopular() {
+  fetchPopular()
+    .then((films) => renderList(films))
+    .catch((error) => console.log(error));
+}
 
-// markupPopular();
+markupPopular();
