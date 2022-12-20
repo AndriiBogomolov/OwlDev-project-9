@@ -1,0 +1,104 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+
+.pages {
+  display: flex;
+}
+
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  cursor: pointer;
+
+  transition: all 250ms ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+    background-color: #f7f7f7;
+    outline: none;
+  }
+}
+
+.next-btn,
+.prev-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f7f7f7;
+
+  transition: all 250ms ease;
+
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+    outline: none;
+  }
+}
+
+.next-btn {
+  background-image: url(../images/arrow-left.svg);
+  background-size: cover;
+  background-position: 12px 12px;
+  background-repeat: no-repeat;
+}
+
+.prev-btn {
+  background-image: url(../images/arrow-left.svg);
+  background-size: cover;
+  background-position: 12px 12px;
+  background-repeat: no-repeat;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.active-btn {
+  background-color: #ff6b08;
+  color: #fff;
+  &:hover,
+  &:focus {
+    background-color: #ff6b08;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .first,
+  .last {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pagination {
+    padding-bottom: 60px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .pagination-mid {
+    display: flex;
+  }
+
+  .dots {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+  }
+}

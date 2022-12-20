@@ -10,30 +10,29 @@ export default class ApiServise {
             .then(response => response.json())
         // console.log(fetchMoviesByRequest())
 
-        //     .then(({ results }) => {
-        //         this.incrementPage();
+    //     .then(({ results }) => {
+    //         this.incrementPage();
 
-        //         return results;
-        //     });
+    //         return results;
+    //     });
+  }
+  incrementPage() {
+    this.page += 1;
+  }
 
-    }
-    incrementPage() {
-        this.page += 1;
-    }
+  resetPage() {
+    this.page = 1;
+  }
 
-    resetPage() {
-        this.page = 1;
-    }
+  get query() {
+    return this.searchQuery;
+  }
 
-    get query() {
-        return this.searchQuery;
-    }
+  set query(newQuery) {
+    this.searchQuery = newQuery;
+  }
 
-    set query(newQuery) {
-        this.searchQuery = newQuery;
-    }
-
-    clearInput() {
-        this.searchQuery.innerHTML = '';
-    }
+  clearInput() {
+    this.searchQuery.innerHTML = '';
+  }
 }
