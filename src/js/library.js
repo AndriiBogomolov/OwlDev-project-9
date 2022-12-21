@@ -5,8 +5,8 @@ Notiflix.Notify.init({
   clickToClose: true,
 });
 
-const LOCAL_STORGE_WATCHED = 'local-storage-watched';
-const LOCAL_STORGE_QUEUE = 'local-storage-queue';
+const LOCAL_STORGE_WATCHED = 'watch';
+const LOCAL_STORGE_QUEUE = 'queue';
 let LocalStgWatchedData = [];
 let LocalStgQueueData = [];
 
@@ -22,18 +22,18 @@ console.log(refs);
 currentPageCheck();
 
 function currentPageCheck() {
-  if (!refs.libraryCurrent.classList.contains('current')) {
+  if (!refs.libraryCurrent.classList.contains('nav__link--current')) {
     return;
   } else if (
-    localStorage.getItem(LOCAL_STORGE_WATCHED) == null ||
-    JSON.parse(localStorage.getItem(LOCAL_STORGE_WATCHED)).length == 0
+    localStorage.getItem(LOCAL_STORGE_WATCHED) === null ||
+    JSON.parse(localStorage.getItem(LOCAL_STORGE_WATCHED)).length === 0
   ) {
     console.log('Перевірка при завантажені', LocalStgWatchedData);
     Notiflix.Notify.failure('There are no films in WATCHED !');
     addImgIfLocalStgEmpty();
 
     refs.queueButton.addEventListener('click', onQueueButton);
-  } else {
+  }else {
     LocalStgWatchedData = JSON.parse(
       localStorage.getItem(LOCAL_STORGE_WATCHED)
     );
@@ -45,7 +45,7 @@ function currentPageCheck() {
 }
 
 function onWatchedButton() {
-  refs.galleryRef.innerHTML = '';
+  // refs.galleryRef.innerHTML = '';
   refs.watchedButton.classList.add('btn-active');
   refs.queueButton.classList.remove('btn-active');
   if (
