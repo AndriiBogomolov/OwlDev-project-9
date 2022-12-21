@@ -1,7 +1,7 @@
 import { refs } from './refs';
 import { API_KEY, BASE_URL } from './api-service';
 import { Notify } from 'notiflix';
-import { onModalButtonsW, onModalButtonsQ } from './localStorage'
+import { onModalButtonsW, onModalButtonsQ } from './localStorage';
 
 const movieList = document.querySelector('.card');
 const backdrop = document.querySelector('.backdrop');
@@ -12,19 +12,17 @@ closeButton.addEventListener('click', onModalWindowClose);
 backdrop.addEventListener('click', onBackdropClick);
 
 function onModalWindowOpen(e) {
-  if (!e.target.closest('li')) {   
+  if (!e.target.closest('li')) {
     return;
   } else if (e.target.closest('li')) {
-    
-    const filmId = e.target.closest('a').getAttribute('id');    
+    const filmId = e.target.closest('a').getAttribute('id');
     requestFullInfo(filmId).then(data => fillingMurkup(data));
-  
+
     document.body.style.overflow = 'hidden';
     backdrop.classList.remove('is-hidden');
     document.addEventListener('keydown', onEscClose);
   }
 }
-
 
 function onModalWindowClose() {
   backdrop.classList.add('is-hidden');
@@ -44,19 +42,16 @@ function requestFullInfo(filmId) {
     );
 }
 
-
 function fillingMurkup(obj) {
   const genres = obj.genres.map(genre => genre.name).join(', ');
 
   let saveWatch = localStorage.getItem('watch');
   saveWatch = saveWatch ? JSON.parse(saveWatch) : [];
-  const isexist = saveWatch.find(el =>
-    el.id === obj.id);
+  const isexist = saveWatch.find(el => el.id === obj.id);
 
-    let saveQueue = localStorage.getItem('queue');
-    saveQueue = saveQueue ? JSON.parse(saveQueue) : [];
-    const isexistQ = saveQueue.find(el =>
-      el.id === obj.id);
+  let saveQueue = localStorage.getItem('queue');
+  saveQueue = saveQueue ? JSON.parse(saveQueue) : [];
+  const isexistQ = saveQueue.find(el => el.id === obj.id);
 
   refs.modalFilmImg.src = `https://image.tmdb.org/t/p/w500/${obj.poster_path}`;
   refs.modalFilmImg.alt = `${obj.title} poster`;
@@ -70,10 +65,13 @@ function fillingMurkup(obj) {
   refs.modalFilmGenre.textContent = genres;
   refs.modalFilmWatched.dataset.info = JSON.stringify(obj);
   refs.modalFilmQueue.dataset.info = JSON.stringify(obj);
-  refs.modalFilmWatched.textContent = isexist ? "REMOVED FORM WATCHED" : "ADD TO WATCHED"
-  refs.modalFilmQueue.textContent = isexistQ ? "REMOVED FORM QUEUE" : "ADD TO QUEUE"
+  refs.modalFilmWatched.textContent = isexist
+    ? 'REMOVED FORM WATCHED'
+    : 'ADD TO WATCHED';
+  refs.modalFilmQueue.textContent = isexistQ
+    ? 'REMOVED FORM QUEUE'
+    : 'ADD TO QUEUE';
 }
-
 
 function onBackdropClick(e) {
   if (e.currentTarget === e.target) {
@@ -89,4 +87,3 @@ function onEscClose(e) {
 }
 
 export { onModalWindowOpen, onModalWindowClose, onBackdropClick, onEscClose };
-
