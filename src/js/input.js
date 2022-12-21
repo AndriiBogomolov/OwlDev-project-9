@@ -3,7 +3,7 @@ import refs from './refs';
 import ApiServise from './api-service';
 //импорт toastr notification
 import toastr from 'toastr';
-import 'toastr/build/toastr.css';
+// import 'toastr/build/toastr.css';
 //настройи toastr notification
 toastr.options = {
     closeButton: false,
