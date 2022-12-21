@@ -2,7 +2,7 @@ import ApiServise from './fetchMovieSearch';
 // import toastr from 'toastr';
 // import refs from './refs';
 // console.log(toastr)
-const apiServise = new ApiServise(arguments);
+const apiServise = new ApiServise();
 console.log(apiServise);
 
 const searchForm = document.querySelector('#search-form');
