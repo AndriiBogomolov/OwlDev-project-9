@@ -33,7 +33,7 @@ function currentPageCheck() {
     addImgIfLocalStgEmpty();
 
     refs.queueButton.addEventListener('click', onQueueButton);
-  }else {
+  } else {
     LocalStgWatchedData = JSON.parse(
       localStorage.getItem(LOCAL_STORGE_WATCHED)
     );
@@ -93,11 +93,19 @@ function onQueueButton() {
 }
 
 export function markupCard(LocalStgData) {
-  const filmImg = 'https://image.tmdb.org/t/p/w500/'
-  const markup = LocalStgData.map(({ original_title, release_date, genre, id, poster_path, vote_count,vote_average
-  }) => {
-    const rating = Number(vote_count);
-    return `
+  const filmImg = 'https://image.tmdb.org/t/p/w500/';
+  const markup = LocalStgData.map(
+    ({
+      original_title,
+      release_date,
+      genre,
+      id,
+      poster_path,
+      vote_count,
+      vote_average,
+    }) => {
+      const rating = Number(vote_count);
+      return `
                 <li class="gallery__item card-set" data-id="${id}">
         <div class="img-wrap">
           <img
@@ -115,7 +123,8 @@ export function markupCard(LocalStgData) {
           </div>
         </div>
       </li>`;
-  }).join('');
+    }
+  ).join('');
   refs.galleryRef.innerHTML = markup;
 }
 
