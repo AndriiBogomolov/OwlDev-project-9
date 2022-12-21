@@ -1,7 +1,11 @@
 import renderList from './popular-films';
+import Notiflix from 'notiflix';
 import { refs } from './refs';
 import { API_KEY } from './api-service';
 import { BASE_URL } from './api-service';
+
+const inputElement = document.querySelector('input');
+const btnElement = document.querySelector('button');
 
 class ApiServise {
   constructor() {
@@ -11,6 +15,10 @@ class ApiServise {
 
   fetchPopularMovies() {
     const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${this.page}`;
+    return fetch(url).then(response => response.json());
+  }
+  fetchMoviesByRequest() {
+    const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`;
     return fetch(url).then(response => response.json());
   }
 
@@ -44,6 +52,49 @@ const apiServise = new ApiServise();
 let currentPage = 1;
 let totalPages;
 const pageRange = 2;
+
+btnElement.addEventListener('click', onSearchForm);
+
+function onSearchForm(e) {
+  e.preventDefault();
+  apiServise.query = inputElement.value.trim();
+
+  if (apiServise.query.trim() === '') {
+    Notiflix.Notify.failure('Please enter the text in search field');
+    return;
+  }
+
+  clearGallery();
+  refs.pageList.innerHTML = '';
+  apiServise.resetPage();
+  currentPage = 1;
+  searchFetch();
+}
+
+function clearGallery() {
+  refs.gallery.innerHTML = '';
+}
+
+function searchFetch() {
+  apiServise
+    .fetchMoviesByRequest()
+    .then(data => {
+      console.log(data);
+      if (data.total_results == 0) {
+        Notiflix.Notify.failure(
+          '"Sorry, there are no film with this name. Please try again."'
+        );
+        apiServise.query = '';
+        fetchGall();
+      }
+      totalPages = data.total_pages;
+      refs.lastBtn.textContent = totalPages;
+      // console.log(data)
+      renderList(data);
+      init();
+    })
+    .catch(error => console.log(error));
+}
 
 function fetchGall() {
   apiServise
