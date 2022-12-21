@@ -12,7 +12,8 @@ closeButton.addEventListener('click', onModalWindowClose);
 backdrop.addEventListener('click', onBackdropClick);
 
 function onModalWindowOpen(e) {
-  if (!e.target.closest('li')) {
+  if (e.preventDefault(!e.target.closest('li'))) {
+    e.preventDefault()
     return;
   } else if (e.target.closest('li')) {
     const filmId = e.target.closest('a').getAttribute('id');

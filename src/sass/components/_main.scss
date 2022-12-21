@@ -15,6 +15,7 @@
   }
 
 .card__item {
+  display: flex;
     width: 280px;
     height: 443px;
     border-radius: 5px; 
@@ -46,6 +47,11 @@
     }  
 }
 
+.card__link{
+  display: flex;
+  flex-direction: column;
+}
+
 .card__img {
   width: 280px;
   height: 402px; 
@@ -61,6 +67,10 @@
   height: 574px; 
 }
 
+}
+
+.card__mata {
+  flex-grow: 1;
 }
 
 .card__title {
