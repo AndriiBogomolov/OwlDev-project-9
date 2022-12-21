@@ -26,7 +26,7 @@ function trailerRequest(filmId) {
 
 function createTrailerLink(filmId) {
   trailerRequest(filmId).then(data => {
-    if (data.results.lenght === undefined) {
+    if (data.results.length === 0) {
       return;
     } else {
       const trailer = data.results.filter(obj => {
