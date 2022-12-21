@@ -10,7 +10,7 @@ import './js/popular-films.js';
 import './js/modal_film.js';
 import './js/popular-films.js';
 import './js/spiner.js';
-import './js/fetchMovieDetails';
+import './js/fetchMovieTrailer';
 import './js/spiner';
 import './js/change-theme';
 import './js/refs';
