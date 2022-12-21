@@ -10,7 +10,7 @@ export default class ApiServise {
     fetchPopularMovies() {
         const url = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${this.page}`;
         return fetch(url)
-            .then(response => response.json())
+            .then(response => response.json());
         // .then(({ results }) => {
         //   return results;
         // });
@@ -19,7 +19,7 @@ export default class ApiServise {
     fetchMoviesByRequest() {
         const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchQuery}&page=${this.page}&include_adult=false`;
         return fetch(url)
-            .then(response => response.json())
+            .then(response => response.json());
         // .then(({ results }) => {
         //   this.incrementPage();
         //   return results;
@@ -34,7 +34,7 @@ export default class ApiServise {
             .then(data => {
                 return data;
 
-            })
+            });
         // .then(data => ({
         //   data
         // })).then(({ data }) => {
@@ -50,7 +50,7 @@ export default class ApiServise {
             .then(response => response.json())
             .then(data => {
                 return data;
-            })
+            });
     }
 
     incrementPage() {
