@@ -24,7 +24,6 @@
     "buffer": "^6.0.3",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.5",
-    "toastr": "^2.1.4",
     "tui-pagination": "^3.4.1"
   },
   "devDependencies": {
