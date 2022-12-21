@@ -12,6 +12,7 @@ export const refs = {
   modalFilmWatched: document.querySelector('.button-watched'),
   modalFilmQueue: document.querySelector('.button-queue'),
 
+  searchForm: document.querySelector('.search-form'),
   //pagination
   gallery: document.querySelector('.card'),
   paginationList: document.querySelector('.pagination-mid'),
