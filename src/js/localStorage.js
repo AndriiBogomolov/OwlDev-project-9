@@ -51,10 +51,10 @@ function onModalButtonsQ (e){
   } else {
     saveQueue = [];
   } 
-    const isexist = saveQueue.find(el =>
+    const isexistQ = saveQueue.find(el =>
     el.id === film.id)
     
-  if (isexist) {
+  if (isexistQ) {
     saveQueue = saveQueue.filter(el =>
       el.id !== film.id)
       refs.modalFilmQueue.textContent = "ADD TO QUEUE"
@@ -66,3 +66,5 @@ function onModalButtonsQ (e){
   }
   localStorage.setItem('queue', JSON.stringify(saveQueue))
 }
+
+export {onModalButtonsW, onModalButtonsQ}
