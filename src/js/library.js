@@ -93,23 +93,25 @@ function onQueueButton() {
 }
 
 export function markupCard(LocalStgData) {
-  const markup = LocalStgData.map(({ alt, date, genre, id, src, vote }) => {
-    const rating = Number(vote);
+  const filmImg = 'https://image.tmdb.org/t/p/w500/'
+  const markup = LocalStgData.map(({ original_title, release_date, genre, id, poster_path, vote_count,vote_average
+  }) => {
+    const rating = Number(vote_count);
     return `
                 <li class="gallery__item card-set" data-id="${id}">
         <div class="img-wrap">
           <img
             class="gallery__img"
-            src="${src}"
-            alt="${alt}"
+            src="${filmImg}${poster_path}"
+            alt="${original_title}}"
             loading="lazy"
           />
         </div>
         <div class="gallary-wrapper">
-          <h2 class="gallery__title">${alt}</h2>
+          <h2 class="gallery__title">${original_title}</h2>
           <div class="gallery__wrap">
-            <p class="gallery__ganres">${genre} | ${date}</p>
-            <p class="gallery__rating">${rating}</p>
+            <p class="gallery__ganres">${genre} | ${release_date}</p>
+            <p class="gallery__rating">${vote_average}</p>
           </div>
         </div>
       </li>`;
