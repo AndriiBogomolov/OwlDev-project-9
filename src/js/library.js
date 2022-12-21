@@ -1,4 +1,6 @@
 import Notiflix from 'notiflix';
+import './fetchMovieTrailer';
+import { onModalWindowOpen, onModalWindowClose, onBackdropClick, onEscClose } from './modal_film';
 // import { markupCard } from '../watched-queue/watched-queue-markup';
 
 Notiflix.Notify.init({
@@ -39,8 +41,10 @@ function currentPageCheck() {
     );
     let LocalStgData = LocalStgWatchedData;
     markupCard(LocalStgData);
+    console.log(LocalStgData);
     refs.watchedButton.addEventListener('click', onWatchedButton);
     refs.queueButton.addEventListener('click', onQueueButton);
+    refs.galleryRef.addEventListener('click', onModalWindowOpen);
   }
 }
 
@@ -98,31 +102,30 @@ export function markupCard(LocalStgData) {
     ({
       original_title,
       release_date,
-      genre,
+      genres: {name: genre},
       id,
       poster_path,
-      vote_count,
       vote_average,
     }) => {
-      const rating = Number(vote_count);
-      return `
-                <li class="gallery__item card-set" data-id="${id}">
-        <div class="img-wrap">
-          <img
-            class="gallery__img"
-            src="${filmImg}${poster_path}"
-            alt="${original_title}}"
-            loading="lazy"
+      let year = new Date(release_date);
+      let yearRelease = year.getFullYear();
+      return `<li class="card__item item">
+      <a class="card__link link" href="#" id="${id}" data-id="${id}" data-film-open>
+        <div class="card__thumb">
+          <img class="card__img"                      
+            sizes="(min-width: 1200px) 370px, (min-width: 768px) 354px, (max-width: 767px) 450px, 100vw"
+            src='${filmImg}${poster_path}'
+            alt="tehnocryak"
+            width="100%"
+            class="card__img"
           />
         </div>
-        <div class="gallary-wrapper">
-          <h2 class="gallery__title">${original_title}</h2>
-          <div class="gallery__wrap">
-            <p class="gallery__ganres">${genre} | ${release_date}</p>
-            <p class="gallery__rating">${vote_average}</p>
-          </div>
+        <div class="card__meta">
+          <h2 class="card__title">${original_title}</h2>
+          <p class="card__info">${genre} | ${yearRelease} <span class="vote">${vote_average}</span></p>
         </div>
-      </li>`;
+      </a>
+    </li>`
     }
   ).join('');
   refs.galleryRef.innerHTML = markup;
