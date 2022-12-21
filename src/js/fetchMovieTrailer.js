@@ -26,13 +26,23 @@ function trailerRequest(filmId) {
 
 function createTrailerLink(filmId) {
   trailerRequest(filmId).then(data => {
-    const trailer = data.results.filter(obj => obj.official);
-    const key = trailer[0].key;
-    const instance = basicLightbox.create(`
-    <iframe src="https://www.youtube.com/embed/${key}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-`);
-    instance.show();
-    trailerBtnClose(instance);
+    if (data.results.lenght === undefined) {
+      return;
+    } else {
+      const trailer = data.results.filter(obj => {
+        if (!obj.official) {
+          return data.results[0].key;
+        }
+        return obj.official;
+      });
+      const key = trailer[0].key;
+
+      const instance = basicLightbox.create(`
+      <iframe src="https://www.youtube.com/embed/${key}" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  `);
+      instance.show();
+      trailerBtnClose(instance);
+    }
   });
 }
 
@@ -57,8 +67,3 @@ function trailerBtnClose(instance) {
     instance.close();
   });
 }
-
-
-
-
-
