@@ -17,7 +17,9 @@
 .card__item {
     width: 280px;
     height: 443px;
-    border-radius: 5px;    
+    border-radius: 5px; 
+    margin-left: auto;
+    margin-right: auto;   
 
     &:nth-child(n + 2) {
         margin-top: 20px;
