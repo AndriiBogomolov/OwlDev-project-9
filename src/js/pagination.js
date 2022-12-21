@@ -65,6 +65,7 @@ function onSearchForm(e) {
   }
 
   clearGallery();
+  inputElement.value = '';
   refs.pageList.innerHTML = '';
   apiServise.resetPage();
   currentPage = 1;
