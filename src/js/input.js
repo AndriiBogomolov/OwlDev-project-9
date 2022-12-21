@@ -1,6 +1,6 @@
 import ApiServise from './fetchMovieSearch';
 // import toastr from 'toastr';
-import refs from './refs';
+// import refs from './refs';
 // console.log(toastr)
 const apiServise = new ApiServise(arguments);
 console.log(apiServise);
