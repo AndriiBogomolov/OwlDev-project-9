@@ -57,7 +57,7 @@ function fillingMurkup(obj) {
   refs.modalFilmImg.src = `https://image.tmdb.org/t/p/w500/${obj.poster_path}`;
   refs.modalFilmImg.alt = `${obj.title} poster`;
   refs.modalFilmTitle.textContent = obj.title;
-  refs.modalFilmTitle.filmId = obj.id;
+  refs.modalFilmId.textContent = obj.id;
   refs.modalFilmVote.textContent = obj.vote_average;
   refs.modalFilmVotes.textContent = obj.vote_count;
   refs.modalFilmPopularity.textContent = obj.popularity;
