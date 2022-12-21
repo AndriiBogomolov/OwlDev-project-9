@@ -15,4 +15,3 @@ import './js/spiner';
 import './js/change-theme';
 import './js/refs';
 import './js/pagination.js';
-import './js/fetchMovieSearch';
