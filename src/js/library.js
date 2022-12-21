@@ -20,7 +20,7 @@ const refs = {
 currentPageCheck();
 
 function currentPageCheck() {
-  if (!refs.libraryCurrent.classList.contains('current')) {
+  if (!refs.libraryCurrent.classList.contains('nav__link--current')) {
     return;
   } else if (
     localStorage.getItem(LOCAL_STORGE_WATCHED) == null ||
