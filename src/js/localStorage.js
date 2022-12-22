@@ -24,13 +24,12 @@ function onModalButtonsW(e) {
 
   if (isexist) {
     saveWatch = saveWatch.filter(el => el.id !== film.id);
-    refs.modalFilmWatched.textContent = 'ADD TO WATCH';
-    Notiflix.Notify.failure('Film remove from watch');
+    refs.modalFilmWatched.textContent = 'ADD TO WATCHED';
+    Notiflix.Notify.failure('Film removed from watched');
   } else {
     saveWatch.push(film);
-    refs.modalFilmWatched.textContent = 'REMOVE FROM WATCH';
-
-    Notiflix.Notify.success('Film add to watch');
+    refs.modalFilmWatched.textContent = 'REMOVED FROM WATCHED';
+    Notiflix.Notify.success('Film add to watched');
   }
   localStorage.setItem('watch', JSON.stringify(saveWatch));
 }
@@ -51,10 +50,10 @@ function onModalButtonsQ(e) {
   if (isexistQ) {
     saveQueue = saveQueue.filter(el => el.id !== film.id);
     refs.modalFilmQueue.textContent = 'ADD TO QUEUE';
-    Notiflix.Notify.failure('Film remove from watch');
+    Notiflix.Notify.failure('Film removed from queue');
   } else {
     saveQueue.push(film);
-    refs.modalFilmQueue.textContent = 'REMOVE FROM QUEUE';
+    refs.modalFilmQueue.textContent = 'REMOVED FROM QUEUE';
     Notiflix.Notify.success('Film add to queue');
   }
   localStorage.setItem('queue', JSON.stringify(saveQueue));
