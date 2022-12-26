@@ -11,16 +11,40 @@
       <nav class="container-nav__link">
         <ul class="menu-nav list">
           <li class="menu-nav__item">
-            <a
-              href="./index.html"
-              class="menu-nav__link menu-nav__link--current"
-              >HOME</a
-            >
+            <a href="./index.html" class="menu-nav__link menu-nav__link--current">HOME</a>
           </li>
           <li class="menu-nav__item">
             <a href="./library.html" class="menu-nav__link">MY LIBRARY</a>
           </li>
+          <li class="menu-nav__item">
+            <button class="menu-nav__link menu-nav__button" type="button" data-modal-open>SIGN IN</button>
+          </li>
         </ul>
+
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+              <form class="login-form" name="service-form" autocomplete="on">
+                <h2 class="login-form__title">Sign in</h2>
+
+                <div class="form-field">
+                  <div class="form-field__container">
+                    <input class="form-field__input" type="email" name="mail" id="user_email" placeholder="E-mail" required>
+                  </div>
+                </div>
+                
+                <div class="form-field">
+                  <div class="form-field__container">
+                    <input class="form-field__input" type="password" name="password" id="user_password" minlength="5" maxlength="10" placeholder="Password" required>
+                  </div>
+                </div>
+
+                <button class="login-form__button" type="submit">forgot password ?</button>
+                <button class="login-form__button" type="submit" data-modal-close>Sign in</button>
+
+              </form>
+            </div>
+          </div>
+
       </nav>
     </div>
 
